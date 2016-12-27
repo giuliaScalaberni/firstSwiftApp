@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        myLabel.alpha=0;
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     func daysToFirst () -> Int{
         let oggi = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: 0, toDate: NSDate(), options: nil)
         
@@ -33,8 +34,14 @@ class ViewController: UIViewController {
         let components: NSCalendarUnit = .DayCalendarUnit
         let diff = NSCalendar.currentCalendar().components(components, fromDate: oggi!, toDate: first, options: nil)
         return diff.day
-    }*/
+    }
 
+    
+    @IBAction func myButtonPressed(_ sender: Any) {
+        myLabel.alpha = 1
+        myLabel.text = "Mancano \(daysToFirst()) giorni a Capodanno!"
+    }
 
+    @IBOutlet weak var myLabel: UILabel!
 }
 
