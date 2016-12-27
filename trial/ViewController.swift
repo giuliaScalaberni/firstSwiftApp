@@ -35,12 +35,10 @@ class ViewController: UIViewController {
     //setting current date
         let currentDate = NSDate()
         let formatter = DateFormatter()
+        //setting the format
         formatter.dateFormat = "dd.MM.yyyy"
-
-          return userCalendar.dateComponents([Calendar.Component.day],
-                                            
-                                                                                                                   from: currentDate as Date,
-                                                                                                                   to: first).day!
+        
+        return userCalendar.dateComponents([Calendar.Component.day],from: currentDate as Date,to: first).day!
 
        
         
