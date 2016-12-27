@@ -22,19 +22,28 @@ class ViewController: UIViewController {
     }
     
     
-    func daysToFirst () -> String{
+    func daysToFirst () -> Int{
+        let userCalendar = Calendar.current
      //setting the date of first Jan
-        let first = NSDateComponents()
-        first.day = 01
-        first.month = 01
-        first.year=2017
+        var firstC = DateComponents()
+        firstC.day = 01
+        firstC.month = 01
+        firstC.year=2017
+        let first = userCalendar.date(from: firstC)!
+        
+        
     //setting current date
-        let currentDate = Date()
+        let currentDate = NSDate()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
+
+          return userCalendar.dateComponents([Calendar.Component.day],
+                                            
+                                                                                                                   from: currentDate as Date,
+                                                                                                                   to: first).day!
+
+       
         
-        
-        return formatter.string(from: currentDate)
         
         
     }
@@ -42,7 +51,7 @@ class ViewController: UIViewController {
     
     @IBAction func myButtonPressed(_ sender: Any) {
         myLabel.alpha=1
-        myLabel.text = "Mancano \(daysToFirst()) !"
+        myLabel.text = "Mancano \(daysToFirst()) giorni!"
         
     }
 
