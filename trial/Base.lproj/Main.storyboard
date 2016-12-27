@@ -33,7 +33,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Quanti giorni mancano a Capodanno?"/>
                                 <connections>
-                                    <action selector="buttonCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghO-EG-pMI"/>
                                     <action selector="myButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khW-lQ-Lhg"/>
                                 </connections>
                             </button>

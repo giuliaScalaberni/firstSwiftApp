@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        myLabel.alpha=0;
+        myLabel.alpha=0
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,16 +33,16 @@ class ViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         
+        
         return formatter.string(from: currentDate)
-
         
         
     }
 
     
     @IBAction func myButtonPressed(_ sender: Any) {
-        myLabel.alpha = 1
-        myLabel.text = "Mancano \(daysToFirst()) giorni a Capodanno!"
+        myLabel.alpha=1
+        myLabel.text = daysToFirst()
     }
 
     @IBOutlet weak var myLabel: UILabel!
