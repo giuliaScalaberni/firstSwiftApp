@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        myLabel.alpha=0;
+        myLabel.alpha=0
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,23 +23,36 @@ class ViewController: UIViewController {
     
     
     func daysToFirst () -> Int{
-        let oggi = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: 0, toDate: NSDate(), options: nil)
+        let userCalendar = Calendar.current
+     //setting the date of first Jan
+        var firstC = DateComponents()
+        firstC.day = 01
+        firstC.month = 01
+        firstC.year=2017
+        let first = userCalendar.date(from: firstC)!
         
-        let firstComponents = NSDateComponents()
-        firstComponents.year = 2017
-        firstComponents.month = 01
-        firstComponents.day = 01
-        let first = NSCalendar.currentCalendar().dateFromComponents(firstComponents)!
         
-        let components: NSCalendarUnit = .DayCalendarUnit
-        let diff = NSCalendar.currentCalendar().components(components, fromDate: oggi!, toDate: first, options: nil)
-        return diff.day
+    //setting current date
+        let currentDate = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+
+          return userCalendar.dateComponents([Calendar.Component.day],
+                                            
+                                                                                                                   from: currentDate as Date,
+                                                                                                                   to: first).day!
+
+       
+        
+        
+        
     }
 
     
     @IBAction func myButtonPressed(_ sender: Any) {
-        myLabel.alpha = 1
-        myLabel.text = "Mancano \(daysToFirst()) giorni a Capodanno!"
+        myLabel.alpha=1
+        myLabel.text = "Mancano \(daysToFirst()) giorni!"
+        
     }
 
     @IBOutlet weak var myLabel: UILabel!
