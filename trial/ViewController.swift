@@ -19,6 +19,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*
+    func daysToFirst () -> Int{
+        let oggi = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: 0, toDate: NSDate(), options: nil)
+        
+        let firstComponents = NSDateComponents()
+        firstComponents.year = 2017
+        firstComponents.month = 01
+        firstComponents.day = 01
+        let first = NSCalendar.currentCalendar().dateFromComponents(firstComponents)!
+        
+        let components: NSCalendarUnit = .DayCalendarUnit
+        let diff = NSCalendar.currentCalendar().components(components, fromDate: oggi!, toDate: first, options: nil)
+        return diff.day
+    }*/
 
 
 }
