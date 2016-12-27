@@ -22,18 +22,21 @@ class ViewController: UIViewController {
     }
     
     
-    func daysToFirst () -> Int{
-        let oggi = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: 0, toDate: NSDate(), options: nil)
+    func daysToFirst () -> String{
+     //setting the date of first Jan
+        let first = NSDateComponents()
+        first.day = 01
+        first.month = 01
+        first.year=2017
+    //setting current date
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
         
-        let firstComponents = NSDateComponents()
-        firstComponents.year = 2017
-        firstComponents.month = 01
-        firstComponents.day = 01
-        let first = NSCalendar.currentCalendar().dateFromComponents(firstComponents)!
+        return formatter.string(from: currentDate)
+
         
-        let components: NSCalendarUnit = .DayCalendarUnit
-        let diff = NSCalendar.currentCalendar().components(components, fromDate: oggi!, toDate: first, options: nil)
-        return diff.day
+        
     }
 
     
