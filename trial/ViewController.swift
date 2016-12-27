@@ -42,7 +42,8 @@ class ViewController: UIViewController {
     
     @IBAction func myButtonPressed(_ sender: Any) {
         myLabel.alpha=1
-        myLabel.text = daysToFirst()
+        myLabel.text = "Mancano \(daysToFirst()) !"
+        
     }
 
     @IBOutlet weak var myLabel: UILabel!
